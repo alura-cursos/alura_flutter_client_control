@@ -48,9 +48,9 @@ class _ClientsPageState extends State<ClientsPage> {
               iconColor: Colors.indigo,
             ),
             onDismissed: (direction) {
-              // setState(() {
+              setState(() {
                 clients.removeAt(index);
-              // });
+              });
             },
           );
         },
@@ -74,7 +74,7 @@ class _ClientsPageState extends State<ClientsPage> {
         builder: (BuildContext context) {
             return AlertDialog(
                 scrollable: true,
-                title: const Text('Cadastrar tipo'),
+                title: const Text('Cadastrar cliente'),
                 content: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Form(
@@ -108,9 +108,9 @@ class _ClientsPageState extends State<ClientsPage> {
                               color: Colors.indigo,
                             ),
                             onChanged: (newValue) {
-                              // setState(() {
+                              setState(() {
                                 dropdownValue = newValue as ClientType;
-                              // });
+                              });
                             },
                             items: types.map((ClientType type) {
                               return DropdownMenuItem<ClientType>(
@@ -128,9 +128,9 @@ class _ClientsPageState extends State<ClientsPage> {
                   TextButton(
                       child: const Text("Salvar"),
                       onPressed: () async {
-                        // setState(() {
+                        setState(() {
                           clients.add(Client(name: nomeInput.text, email: emailInput.text, type: dropdownValue));
-                        // });
+                        });
                         Navigator.pop(context);
                       }
                   ),
