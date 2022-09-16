@@ -43,9 +43,9 @@ class _ClientTypesPageState extends State<ClientTypesPage> {
               iconColor: Colors.deepOrange,
             ),
             onDismissed: (direction) {
-              // setState(() {
+              setState(() {
                 types.removeAt(index);
-              // });
+              });
             },
           );
         },
@@ -92,9 +92,9 @@ class _ClientTypesPageState extends State<ClientTypesPage> {
                       child: ElevatedButton(
                             onPressed: () async {
                               final IconData? result = await showIconPicker(context: context, defalutIcon: selectedIcon);
-                              // setState(() {
+                              setState(() {
                                 selectedIcon = result;
-                              // });
+                              });
                             },
                             child: const Text('Selecionar icone')
                         ),
@@ -112,7 +112,7 @@ class _ClientTypesPageState extends State<ClientTypesPage> {
                 selectedIcon ??= Icons.credit_score;
                 types.add(ClientType(name: nomeInput.text, icon: selectedIcon));
                 selectedIcon = null;
-                // setState(() {});
+                setState(() {});
                 Navigator.pop(context);
               }
             ),
